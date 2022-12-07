@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Poop Point Clicker</title>
+  </head>
+  <body>
+    <h1>Poop Point Clicker</h1>
+    <p>Click the button below to earn poop points!</p>
+    <button onclick="addPoint()">Earn a Poop Point</button>
+    <p>Poop points: <span id="points">0</span></p>
+    <div id="poop-container"></div>
+
+    <script>
+      function addPoint() {
+        // Increment the number of points
+        const pointsElement = document.getElementById('points');
+        pointsElement.innerText = parseInt(pointsElement.innerText) + 1;
+
+        // Add a poop emoji to the screen randomly
+        const poopContainer = document.getElementById('poop-container');
+        const left = Math.random() * window.innerWidth;
+        const top = Math.random() * window.innerHeight;
+        const poopEmoji = document.createElement('img');
+        poopEmoji.src = "https://twemoji.maxcdn.com/2/72x72/1f4a9.png";
+        poopEmoji.style.position = "absolute";
+        poopEmoji.style.left = `${left}px`;
+        poopEmoji.style.top = `${top}px`;
+        poopContainer.appendChild(poopEmoji);
+      }
+    </script>
+  </body>
+</html>
